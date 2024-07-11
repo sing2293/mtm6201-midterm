@@ -1,0 +1,472 @@
+*,*::before,*::after {
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+:root {
+    --main-color: white;
+}
+/* skip links  */
+ul {
+    list-style-type: none
+}
+.skip-link {
+    background: #000000;
+    color: var(--main-color);
+    padding: .75em;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    transform: translateY(-10em);
+    margin: auto;
+    white-space: nowrap;
+    font-weight: bold;
+    outline: none;
+    left: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    z-index: 3;
+}
+
+.skip-link:focus {
+    opacity: 1;
+    transform: translateY(0em);
+    text-align: center;
+    text-decoration: underline red 2px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #000000;
+    color: var(--main-color);
+    margin-top: 2%;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: auto;
+}
+/* Navigation and logo */
+header {
+	display:flex;
+	align-items:center;
+    margin-top: 5%;
+}
+h1 {
+    font-weight: lighter;
+    font-size: 1.8rem;
+}
+.logo {
+	flex:0 1 auto;
+	display:flex;
+	max-width:6rem;
+	margin-right:auto;
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+}
+nav {
+	flex:1 0 auto;
+}
+nav ul {
+	display:flex;
+	justify-content:flex-end;
+	list-style:none;
+	height:100%;
+}
+li {
+	flex:1 0 auto;
+	max-width:6em;
+}
+nav ul li:nth-child(1) {
+    margin-right: 20px;
+}
+nav ul li:nth-child(2) {
+    margin-right: 20px;
+}
+a {
+	display:block;
+	text-align:center;
+	text-decoration:none;
+	padding:0 10px;
+    color: var(--main-color);
+}
+.cont {
+    padding: 5px 10px;
+    background-color: #0869a8;
+    border-radius: 20px;
+}
+.plan, .int {
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.cont:hover, .plan:hover, .int:hover {
+    padding: 5px 10px;
+    background-color: #4de0d6;
+    border-radius: 20px;
+    transform: scale(1.2);
+    color: #000000;
+    font-weight: bold;
+    transition:  ease-in-out 0.25s;
+}
+.cont:focus, .plan:focus, .int:focus {
+    outline: solid rgb(255, 255, 255) 2px;
+}
+/* Bar behind the logo */
+.bar {
+    width: 110px;
+    height: 13px;
+    position: absolute;
+    z-index: -1;
+    transform: translate(58%, 75%);
+    background-color: #0869a8;
+}
+/* Image section */
+.child {
+    position: relative;
+    
+}
+
+.parent {
+    border: 0px solid transparent; 
+    box-shadow: 0 0 60px #ffffff23;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 4%;
+}
+
+.child img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    animation: zoom-in-zoom-out 15s infinite linear;
+}
+/* zoom animation for image */
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1.02, 1.02);
+    }
+    50% {
+      transform: scale(1.12, 1.12);
+    }
+    100% {
+      transform: scale(1.02, 1.02);
+    }
+}
+
+.photo-text h2:nth-of-type(1) {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    
+}
+
+.photo-text h2:nth-of-type(2) {
+    margin-top: 0;
+    font-size: 2.1rem;
+}
+
+.photo-text span {
+    color: #00aced;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.photo-text p {
+    font-size: 0.9rem;
+    margin: 10px 0 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bigcon{
+    position: relative;
+}
+  
+.photo-text {
+    top: 73%;
+    left: 5%;
+    text-align: left;
+    position: absolute;
+    max-width: 500px;
+}
+
+.button {
+    background-color:#0065a8;
+    color: var(--main-color);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.button:hover {
+    transform: scale(1.2);
+    color: #000000;
+    background-color: #4de0d6;
+    transition:  ease-in-out 0.25s;
+}
+
+.button:visited {
+    background-color: rgb(163, 0, 150);
+}
+.button:focus {
+    outline: solid rgb(255, 220, 19) 2px;
+}
+.planetinfo {
+    text-align: center;
+    padding: 50px 0;
+    max-width: 1200px;
+}
+
+.planets {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    justify-content: center;
+}
+
+.planet {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.planet img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+.planetinfo h2 {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.planetinfo {
+    max-width: 1200px;
+}
+.planet a {
+    display: block;
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ffffff2c;
+    font-weight: bolder;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+.photo-text span {
+    font-weight: bolder;
+    background: linear-gradient(to left, #004d80 20%, #4de0d6 40%, #4de0d6 60%, #004d80 80%);
+    background-size: 300% auto;
+    color: var(--main-color);
+    background-clip: text;
+    -webkit-text-fill-color:  transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 10s linear infinite;
+}
+    
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Media query for mobile version */
+
+@media (max-width: 500px) {
+    .wrapper {
+        max-width: 100%;
+    }
+    .planets {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5px;
+        justify-content: center;
+    }
+    .planetinfo h2 {
+        text-align: center;
+    }
+.child {
+    position: relative; 
+}
+.parent {
+    border: 0px solid transparent; 
+    box-shadow: 0 0 60px #ffffff23;
+    width: auto;
+    height: 500px;
+    border-radius: 0px; 
+    overflow: hidden;
+    margin-top: 3.5%;
+}
+
+.child img {
+    width: auto;
+    height: 500px;
+    border-radius: 0px;
+    animation: zoom-in-zoom-out 15s infinite linear;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1.02, 1.02);
+    }
+    50% {
+        transform: scale(1.12, 1.12);
+    }
+    100% {
+       transform: scale(1.02, 1.02);
+    }
+}
+.photo-text {
+    top: 60%;
+    text-align: center;
+    position: absolute;
+    max-width: 500px;
+}
+.photo-text span {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+header {
+	display: contents
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+    margin: auto;
+    margin-top: 5%;
+    transform: translateX(-35%);
+}
+
+nav ul {
+	display:flex;
+	justify-content: center;
+	list-style:none;
+	height:100%;
+    margin-top: 2%;
+}
+
+nav ul li:nth-child(1) {
+    margin-right: 20px;
+}
+nav ul li:nth-child(2) {
+    margin-right: 20px;
+}
+a {
+	display:block;
+	text-align:center;
+	text-decoration:none;
+	padding:0 10px;
+    color: var(--main-color);
+}
+.button {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+/* Media query for middle version */
+
+@media (min-width: 500px) and (max-width: 900px) {
+    .wrapper {
+        max-width: 100%;
+    }
+    .planets {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-content: center;
+    }
+    .planetinfo h2 {
+        text-align: center;
+    }
+    .child {
+        position: relative; 
+    }
+    .parent {
+        border: 0px solid transparent; 
+        box-shadow: 0 0 60px #ffffff23;
+        width: auto;
+        height: 500px;
+        border-radius: 0px; 
+        overflow: hidden;
+        margin-top: 3%;
+    }
+    
+    .child img {
+        width: auto;
+        height: 500px;
+        border-radius: 0px;
+        animation: zoom-in-zoom-out 15s infinite linear;
+    }
+    
+    @keyframes zoom-in-zoom-out {
+        0% {
+            transform: scale(1.02, 1.02);
+        }
+        50% {
+            transform: scale(1.12, 1.12);
+        }
+        100% {
+            transform: scale(1.02, 1.02);
+        }
+    }
+    header {
+        display: contents
+    }
+    
+    .logo {
+        font-family: 'Playfair Display', serif;
+        white-space: nowrap;
+        margin: auto;
+        margin-top: 5%;
+        transform: translateX(-35%);
+    }
+    
+    nav ul {
+        display:flex;
+        justify-content: center;
+        list-style:none;
+        height:100%;
+        margin-top: 1.5%;
+    }
+    
+    nav ul li:nth-child(1) {
+        margin-right: 20px;
+    }
+    nav ul li:nth-child(2) {
+        margin-right: 20px;
+    }
+    a {
+        display:block;
+        text-align:center;
+        text-decoration:none;
+        padding:0 10px;
+        color: var(--main-color);
+    }
+    .button {
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
